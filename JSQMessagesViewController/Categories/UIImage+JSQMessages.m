@@ -85,6 +85,11 @@
     return [UIImage jsq_bubbleImageFromBundleWithName:@"bubble_min_tailless"];
 }
 
++ (UIImage *)jsq_bubbleCompactMediaTaillessImage
+{
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"bubble_min_media_tailless"];
+}
+
 + (UIImage *)jsq_defaultAccessoryImage
 {
     return [UIImage jsq_bubbleImageFromBundleWithName:@"clip"];

@@ -64,6 +64,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)jsq_bubbleCompactTaillessImage;
 
 /**
+*  @return The compact media message bubble image without a tail.
+*/
++ (UIImage *)jsq_bubbleCompactMediaTaillessImage;
+
+/**
  *  @return The default input toolbar accessory image.
  */
 + (UIImage *)jsq_defaultAccessoryImage;
