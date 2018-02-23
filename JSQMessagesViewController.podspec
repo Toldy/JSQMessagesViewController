@@ -2,10 +2,12 @@ Pod::Spec.new do |s|
 	s.name = 'JSQMessagesViewController'
 	s.version = '7.3.5'
 	s.summary = 'An elegant messages UI library for iOS.'
+-	s.homepage = 'https://github.com/Toldy/JSQMessagesViewController'
 	s.license = 'MIT'
 	s.platform = :ios, '7.0'
 
-	s.author = 'Jesse Squires'
+ 	s.author = 'Julien Colin'
+-	s.social_media_url = 'https://twitter.com/toldy_'
 
 	s.source = { :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :tag => s.version }
 	s.source_files = 'JSQMessagesViewController/**/*.{h,m}'
