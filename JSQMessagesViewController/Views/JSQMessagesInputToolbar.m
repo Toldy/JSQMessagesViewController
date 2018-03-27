@@ -51,7 +51,7 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
     self.sendButtonLocation = JSQMessagesInputSendButtonLocationRight;
     self.enablesSendButtonAutomatically = YES;
 
-    self.preferredDefaultHeight = 44.0f;
+    self.preferredDefaultHeight = 0.0f; // No toolbar, we manage the keyboard by ourselves
     self.maximumHeight = NSNotFound;
 
     JSQMessagesToolbarContentView *toolbarContentView = [self loadToolbarContentView];
@@ -93,7 +93,8 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
 
 - (void)setPreferredDefaultHeight:(CGFloat)preferredDefaultHeight
 {
-    NSParameterAssert(preferredDefaultHeight > 0.0f);
+     // Allow no toolbar, we manage the keyboard by ourselves
+//    NSParameterAssert(preferredDefaultHeight > 0.0f);
     _preferredDefaultHeight = preferredDefaultHeight;
 }
 

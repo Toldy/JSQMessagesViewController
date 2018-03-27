@@ -232,7 +232,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     [[[self class] nib] instantiateWithOwner:self options:nil];
 
     [self jsq_configureMessagesViewController];
-    [self jsq_registerForNotifications:YES];
+    [self jsq_registerForNotifications:NO]; // Not needed since we manage the keyboard by ourselves
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -865,7 +865,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 - (void)jsq_updateCollectionViewInsets
 {
     const CGFloat top = self.additionalContentInset.top;
-    const CGFloat bottom = CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame) + self.additionalContentInset.bottom;
+    const CGFloat bottom = 0; // No insets since we manage the keyboard by ourselves
     [self jsq_setCollectionViewInsetsTopValue:top bottomValue:bottom];
 }
 

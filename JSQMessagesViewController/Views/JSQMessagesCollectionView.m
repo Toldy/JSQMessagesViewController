@@ -49,7 +49,7 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
 
     self.backgroundColor = [UIColor whiteColor];
-    self.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    self.keyboardDismissMode = UIScrollViewKeyboardDismissModeNone; // We manage the keyboard by ourselves
     self.alwaysBounceVertical = YES;
     self.bounces = YES;
 
