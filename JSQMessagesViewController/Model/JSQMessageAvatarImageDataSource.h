@@ -21,6 +21,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, JSQMessagesAvatarStatus) {
+    JSQMessagesAvatarStatusOffline,
+    JSQMessagesAvatarStatusOnline,
+    JSQMessagesAvatarStatusAway
+};
+
 /**
  *  The `JSQMessageAvatarImageDataSource` protocol defines the common interface through which
  *  a `JSQMessagesViewController` and `JSQMessagesCollectionView` interact with avatar image model objects.
@@ -61,6 +67,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @warning You must not return `nil` from this method.
  */
 - (UIImage *)avatarPlaceholderImage;
+
+/**
+ *  The user status for displaying it above its avatar image.
+ */
+- (JSQMessagesAvatarStatus)avatarStatus;
 
 @end
 

@@ -42,6 +42,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *avatarContainerView;
 
+@property (weak, nonatomic) IBOutlet UIView *avatarStatusView;
+@property (weak, nonatomic) IBOutlet UIView *avatarStatusContainerView;
+
 @property (weak, nonatomic) IBOutlet UIButton *accessoryButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
@@ -142,6 +145,14 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
+
+    self.avatarStatusContainerView.layer.cornerRadius = self.avatarStatusContainerView.frame.size.height / 2;
+    self.avatarStatusContainerView.layer.masksToBounds = true;
+    self.avatarStatusContainerView.layer.borderWidth = 0;
+
+    self.avatarStatusView.layer.cornerRadius = self.avatarStatusView.frame.size.height / 2;
+    self.avatarStatusView.layer.masksToBounds = true;
+    self.avatarStatusView.layer.borderWidth = 0;
 }
 
 - (void)configureAccessoryButton
@@ -165,6 +176,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     _avatarImageView = nil;
 
+    _avatarStatusContainerView = nil;
+    _avatarStatusView = nil;
+
     [_tapGestureRecognizer removeTarget:nil action:NULL];
     _tapGestureRecognizer = nil;
 }
@@ -185,7 +199,10 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.avatarImageView.image = nil;
     self.avatarImageView.highlightedImage = nil;
-    
+
+    self.avatarStatusContainerView.backgroundColor = [UIColor clearColor];
+    self.avatarStatusView.backgroundColor = [UIColor clearColor];
+
     self.accessoryButton.hidden = YES;
 }
 

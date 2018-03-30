@@ -28,27 +28,41 @@
     
     return [[JSQMessagesAvatarImage alloc] initWithAvatarImage:image
                                               highlightedImage:image
-                                              placeholderImage:image];
+                                              placeholderImage:image
+                                                  avatarStatus:JSQMessagesAvatarStatusOffline];
 }
 
 + (instancetype)avatarImageWithPlaceholder:(UIImage *)placeholderImage
 {
     return [[JSQMessagesAvatarImage alloc] initWithAvatarImage:nil
                                               highlightedImage:nil
-                                              placeholderImage:placeholderImage];
+                                              placeholderImage:placeholderImage
+                                                  avatarStatus:JSQMessagesAvatarStatusOffline];
 }
 
 - (instancetype)initWithAvatarImage:(UIImage *)avatarImage
                    highlightedImage:(UIImage *)highlightedImage
                    placeholderImage:(UIImage *)placeholderImage
 {
+    return [[JSQMessagesAvatarImage alloc] initWithAvatarImage:avatarImage
+                                              highlightedImage:highlightedImage
+                                              placeholderImage:placeholderImage
+                                                  avatarStatus:JSQMessagesAvatarStatusOffline];
+}
+
+- (instancetype)initWithAvatarImage:(UIImage *)avatarImage
+                   highlightedImage:(UIImage *)highlightedImage
+                   placeholderImage:(UIImage *)placeholderImage
+                       avatarStatus:(JSQMessagesAvatarStatus)avatarStatus
+{
     NSParameterAssert(placeholderImage != nil);
-    
+
     self = [super init];
     if (self) {
         _avatarImage = avatarImage;
         _avatarHighlightedImage = highlightedImage;
         _avatarPlaceholderImage = placeholderImage;
+        _avatarStatus = avatarStatus;
     }
     return self;
 }
@@ -72,7 +86,8 @@
 {
     return [[[self class] allocWithZone:zone] initWithAvatarImage:[UIImage imageWithCGImage:self.avatarImage.CGImage]
                                                  highlightedImage:[UIImage imageWithCGImage:self.avatarHighlightedImage.CGImage]
-                                                 placeholderImage:[UIImage imageWithCGImage:self.avatarPlaceholderImage.CGImage]];
+                                                 placeholderImage:[UIImage imageWithCGImage:self.avatarPlaceholderImage.CGImage]
+                                                     avatarStatus:self.avatarStatus];
 }
 
 @end

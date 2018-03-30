@@ -552,6 +552,22 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
                 cell.avatarImageView.image = avatarImage;
                 cell.avatarImageView.highlightedImage = [avatarImageDataSource avatarHighlightedImage];
             }
+
+            // Set the avatarStatusViews according to the avatarStatus
+            cell.avatarStatusContainerView.backgroundColor = collectionView.backgroundColor;
+            switch ([avatarImageDataSource avatarStatus]) {
+                case JSQMessagesAvatarStatusOffline:
+                    cell.avatarStatusContainerView.hidden = true;
+                    break;
+                case JSQMessagesAvatarStatusAway:
+                    cell.avatarStatusContainerView.hidden = false;
+                    cell.avatarStatusView.backgroundColor = [UIColor orangeColor];
+                    break;
+                case JSQMessagesAvatarStatusOnline:
+                    cell.avatarStatusContainerView.hidden = false;
+                    cell.avatarStatusView.backgroundColor = [UIColor greenColor];
+                    break;
+            }
         }
     }
 

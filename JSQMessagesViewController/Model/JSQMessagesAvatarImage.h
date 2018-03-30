@@ -48,6 +48,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIImage *avatarPlaceholderImage;
 
 /**
+ *  Returns the user status type for the view displayed above avatarImage.
+ */
+@property (assign, nonatomic) JSQMessagesAvatarStatus avatarStatus;
+
+/**
  *  Initializes and returns an avatar image object having the specified image.
  *
  *  @param image The image for this avatar image. This image will be used for the all of the following
@@ -78,7 +83,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithAvatarImage:(nullable UIImage *)avatarImage
                    highlightedImage:(nullable UIImage *)highlightedImage
-                   placeholderImage:(UIImage *)placeholderImage NS_DESIGNATED_INITIALIZER;
+                   placeholderImage:(UIImage *)placeholderImage;
+
+- (instancetype)initWithAvatarImage:(nullable UIImage *)avatarImage
+                   highlightedImage:(nullable UIImage *)highlightedImage
+                   placeholderImage:(UIImage *)placeholderImage
+                       avatarStatus:(JSQMessagesAvatarStatus)avatarStatus NS_DESIGNATED_INITIALIZER;
 
 /**
  *  Not a valid initializer.

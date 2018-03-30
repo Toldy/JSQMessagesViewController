@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -69,12 +71,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w23-sL-0Rh" userLabel="Avatar Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                             </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lK-qc-jEo">
+                                <rect key="frame" x="21" y="21" width="15" height="15"/>
+                                <subviews>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djI-9I-Hnr">
+                                        <rect key="frame" x="2" y="2" width="11" height="11"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4lK-qc-jEo" secondAttribute="height" multiplier="1:1" id="HUF-Ip-KM4"/>
+                                    <constraint firstItem="djI-9I-Hnr" firstAttribute="centerX" secondItem="4lK-qc-jEo" secondAttribute="centerX" id="Lnc-Wj-WYp"/>
+                                    <constraint firstItem="djI-9I-Hnr" firstAttribute="leading" secondItem="4lK-qc-jEo" secondAttribute="leading" constant="2" id="XSX-jx-Jvp"/>
+                                    <constraint firstItem="djI-9I-Hnr" firstAttribute="centerY" secondItem="4lK-qc-jEo" secondAttribute="centerY" id="aBR-jd-Bbt"/>
+                                    <constraint firstItem="djI-9I-Hnr" firstAttribute="top" secondItem="4lK-qc-jEo" secondAttribute="top" constant="2" id="gY7-7l-lX5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4lK-qc-jEo" secondAttribute="bottom" constant="-2" id="317-6N-BCT"/>
                             <constraint firstItem="w23-sL-0Rh" firstAttribute="leading" secondItem="Da1-09-wR4" secondAttribute="leading" id="6zm-sH-cOT"/>
+                            <constraint firstItem="4lK-qc-jEo" firstAttribute="width" secondItem="w23-sL-0Rh" secondAttribute="width" multiplier="15/34" id="DQG-fr-rIa"/>
                             <constraint firstAttribute="trailing" secondItem="w23-sL-0Rh" secondAttribute="trailing" id="JgK-7W-L10"/>
                             <constraint firstAttribute="bottom" secondItem="w23-sL-0Rh" secondAttribute="bottom" id="U39-Ze-JZ6"/>
+                            <constraint firstAttribute="trailing" secondItem="4lK-qc-jEo" secondAttribute="trailing" constant="-2" id="XvY-CN-jl9"/>
                             <constraint firstAttribute="width" constant="34" id="YwX-fW-Me6"/>
                             <constraint firstItem="w23-sL-0Rh" firstAttribute="top" secondItem="Da1-09-wR4" secondAttribute="top" id="hxb-KR-hNK"/>
                             <constraint firstAttribute="height" constant="34" id="tZk-AK-JFa"/>
@@ -127,6 +147,8 @@
                 <outlet property="avatarContainerViewHeightConstraint" destination="tZk-AK-JFa" id="tPu-mC-ITh"/>
                 <outlet property="avatarContainerViewWidthConstraint" destination="YwX-fW-Me6" id="5PN-NL-hEP"/>
                 <outlet property="avatarImageView" destination="w23-sL-0Rh" id="Yf4-UR-VRC"/>
+                <outlet property="avatarStatusContainerView" destination="4lK-qc-jEo" id="QEx-gn-UNB"/>
+                <outlet property="avatarStatusView" destination="djI-9I-Hnr" id="tbo-90-0M7"/>
                 <outlet property="cellBottomLabel" destination="UPz-5x-c1T" id="MKm-hp-T6v"/>
                 <outlet property="cellBottomLabelHeightConstraint" destination="xPR-Ph-Ze9" id="nvV-Tk-AIs"/>
                 <outlet property="cellTopLabel" destination="afj-rd-iNv" id="bTd-4q-U7e"/>

@@ -164,6 +164,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic, readonly, nullable) UIView *avatarContainerView;
 
 /**
+ *  Returns the avatar status view of the cell that is responsible for displaying user status like offline, away, online.
+ */
+@property (weak, nonatomic, readonly, nullable) UIView *avatarStatusView;
+
+/**
+ *  CUSTOM PL STATUS VIEW
+ *  Returns the avatar status container view of the cell. This view is the superview of the cell's avatarStatusView.
+ */
+@property (weak, nonatomic, readonly, nullable) UIView *avatarStatusContainerView;
+
+/**
  *  Returns the accessory button of the cell.
  */
 @property (weak, nonatomic, readonly, nullable) UIButton *accessoryButton;
